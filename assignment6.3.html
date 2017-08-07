@@ -1,0 +1,58 @@
+<!DOCUMENTTYPE HTML>
+    <html>
+<head>
+<title>Assignment6.3</title>
+</head>
+
+
+<h1> This is Assignment 6.3</h1>
+<h2> <b>Assignment:</b></h2>  Create a Student Result Sheet in a table. Write a JavaScript logic to validate the 3 subject marks details and check if a student score less than 35 in any subject. If yes, then his grade should be displayed as Fail.<br>
+ Calculate the marks, the average and display the grade of a student.<br>
+ <body>  
+<script language="JavaScript">
+function getReport(){
+
+           
+
+            //read the marks
+            var engMarks = prompt("Enter English marks");
+            
+            var mathsMarks = prompt("Enter Maths marks");
+            var scienceMarks = prompt("Enter Science marks");
+            
+            //calculate the total marks (using double notation technique)
+             var totalMarks = engMarks - (- mathsMarks) - (- scienceMarks);
+
+            
+            //get the average marks
+            var averageMarks = totalMarks / 3;  
+            document.write("Average: "+(totalMarks / 3));              
+            
+            //find the grade and result using the ternary operator inside the switch statement                  
+            
+                    if (averageMarks<35){
+                        document.write("<br>Result: Fail<br>Grade: D");
+                    } else if(averageMarks<65){
+                        document.write("<br>Result: Pass<br>Grade: B");
+                    } else{
+                       document.write("<br>Result: Pass<br>Grade: A");
+                    }
+                    
+            
+}
+
+
+</script>
+         
+            
+                <table name="T1">
+                    <tr><td>English</td><td><input type="text" name="txtEnglish"></td></tr>
+                    <tr><td>Maths</td><td><input type="text" name="txtMaths"></td></tr>
+                    <tr><td>Science</td><td><input type="text" name="txtScience"></td></tr>             
+                </table><br/><br/>
+                <input type="button" value="Get Result" onClick='getReport();'>
+          
+            
+     </script>      
+    </body>
+</html>
